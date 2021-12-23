@@ -1,0 +1,110 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Wed Dec 22 20:31:58 2021
+| Host         : DESKTOP-LEJH40V running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file project_all_control_sets_placed.rpt
+| Design       : project_all
+| Device       : xc7a100t
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    32 |
+|    Minimum number of control sets                        |    32 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    90 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    32 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     4 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              39 |           25 |
+| No           | No                    | Yes                    |              12 |            6 |
+| No           | Yes                   | No                     |              45 |           15 |
+| Yes          | No                    | No                     |              44 |           20 |
+| Yes          | No                    | Yes                    |              13 |            3 |
+| Yes          | Yes                   | No                     |             317 |           96 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------+--------------------------+---------------------------+------------------+----------------+
+|     Clock Signal    |       Enable Signal      |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
++---------------------+--------------------------+---------------------------+------------------+----------------+
+|  c2/inst/clk_out1   | v2/v_cnt[10]_i_2_n_0     |                           |                1 |              1 |
+|  c2/inst/clk_out1   | ps/ps2_state_r           | ps/rstn                   |                1 |              1 |
+|  d1/a0/cnt_reg[9]_0 |                          |                           |                1 |              2 |
+|  vclk_BUFG          | r1/x4[3]_i_1_n_0         |                           |                1 |              4 |
+|  vclk_BUFG          | r1/x5[3]_i_1_n_0         |                           |                1 |              4 |
+|  vclk_BUFG          | r1/CEA2                  |                           |                1 |              4 |
+|  c2/inst/clk_out1   | ps/neg_ps2_clk           | ps/rstn                   |                1 |              4 |
+|  c2/inst/clk_out1   |                          |                           |                5 |              5 |
+|  c2/inst/clk_out1   |                          | ps/ps2_byte_r_reg_n_0_[7] |                2 |              5 |
+|  vclk_BUFG          | p1/x[7]_i_2_n_0          | f1/flag_reg[0]_1          |                2 |              8 |
+|  c2/inst/clk_out1   | ps/ps2_byte_r            | ps/rstn                   |                1 |              8 |
+|  c2/inst/clk_out1   | v2/v_cnt[10]_i_2_n_0     | v2/v_cnt[10]_i_1_n_0      |                3 |             10 |
+|  vclk_BUFG          | p1/y[7]_i_1_n_0          | f1/flag_reg[0]_1          |                4 |             11 |
+|  c2/inst/clk_out1   |                          | v2/h_cnt[10]_i_1_n_0      |                5 |             11 |
+|  vclk_BUFG          |                          |                           |                6 |             12 |
+|  vclk_BUFG          | r1/E[0]                  | f1/flag_reg[0]_0          |                5 |             12 |
+|  c2/inst/clk_out1   |                          | ps/rstn                   |                6 |             12 |
+|  clk_IBUF_BUFG      |                          | ps/rstn                   |                4 |             13 |
+|  clk_IBUF_BUFG      | b3/delay_reg[12]_i_1_n_2 | key_IBUF                  |                4 |             14 |
+|  vclk_BUFG          | w1/x20                   | r1/rand2[31]_i_1_n_0      |                8 |             15 |
+|  vclk_BUFG          | w1/x10                   |                           |                8 |             15 |
+|  clk_IBUF_BUFG      |                          | b3/cnt[0]_i_1__0_n_0      |                4 |             16 |
+|  clk_IBUF_BUFG      | b3/prediv[15]_i_1_n_0    | key_IBUF                  |                4 |             16 |
+|  vclk_BUFG          | w1/x20                   |                           |                8 |             16 |
+|  vclk_BUFG          | w1/x10                   | r1/rand1[31]_i_1_n_0      |                4 |             17 |
+|  clk_IBUF_BUFG      |                          |                           |               13 |             20 |
+|  vclk_BUFG          | w1/r5[0]_i_1_n_0         | f1/flag_reg[1]_0          |                8 |             32 |
+|  vclk_BUFG          | w1/r2[0]_i_1_n_0         | f1/flag_reg[1]_0          |                8 |             32 |
+|  vclk_BUFG          | w1/r3[0]_i_1_n_0         | f1/flag_reg[1]_0          |                8 |             32 |
+|  vclk_BUFG          | w1/r4[0]_i_1_n_0         | f1/flag_reg[1]_0          |                8 |             32 |
+|  vclk_BUFG          | w1/r6[0]_i_1_n_0         | f1/flag_reg[1]_0          |                8 |             32 |
+|  vclk_BUFG          | ps/E[0]                  | f1/flag_reg[1]_0          |               22 |             54 |
++---------------------+--------------------------+---------------------------+------------------+----------------+
+
+
